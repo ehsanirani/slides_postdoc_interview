@@ -1,0 +1,1328 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Rheology of weakly attractive soft particles</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="">
+		<meta name="author" content="Ehsan Irani">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="ehsan.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section  id="presentable" class="bookend">
+					<h3 style="color: rgba(0,129,205,1);">Rheology of Weakly Attractive Soft Particles</h3>
+					<br>
+					<div class="greenbox" style="margin: 0 auto;">
+					<p>Ehsan Irani</p>
+					<p><span style="font-size:23px;">Supervisor:</span><br>Dr. Claus Heussinger</p>
+					</div>
+					<div class="uni_logo">
+						<p style="text-align: center; font-size:23px; "><br>Institute for theoretical physics<br>
+						<img align="center" width="50%" style="border: none; box-shadow:none;" data-src="figs/uni-goe-logo.jpg" alt="uni logo">
+						</p>
+					</div>
+					<p style="font-size:23px;">Göttingen<br>10 August 2016<br>
+
+				</section>
+				<!--  Introduction  -->
+
+				<section>
+					<section>
+						<div id="float-box" style="float:left;" >
+							<p id="part">Introduction</p>
+							<h3 id="h" class="blue">Complex Fluids</h3>
+						</div>
+						<br style="clear:both;">
+						<div  style="width:45%; float:left;">
+							<br>
+								<p align="left">
+								Neither <span style="color:green">solid</span> nor <span style="color:red;">liquid</span>!
+								</p>
+							<ul>
+								<li>Granular Matter</li>
+								<li>Foams</li>
+								<li>Paints</li>
+								<li>Mayonnaise, etc.</li>
+								<li>Biological systems: Blood, etc.</li>
+							</ul>
+							<!--<video class="fragment" width="100%" controls data-fragment-index="1">
+								<source src="videos/non-newtonian.mp4" type="video/mp4">
+							</video>-->
+						</div>
+						<div style="width:55%; float:left;">
+						<img  align="right" src="figs/complex-fluids2.jpg" style="width:90%; align:right; border:none; box-shadows:none;">
+						</div><span style="clear:both;">
+						<aside class="notes">
+							<p>- The response depends on the magnitude of the stress or relavant time-scale</p>
+							<p>- Commonplace in nature</p>
+						</aside>
+					</section>
+					<!--<section>
+						<div id="float-box" style="float:left;" >
+							<h3 id="h" class="blue" align="left"> Complex Fluids</h3>
+
+						</div>
+						<br style="clear:both;">
+						<div id="float-box" style="width:45%; float:left;">
+							<p align="left">
+							<strong>Viscosity:</strong>
+							</p>
+							<p align="center" style="margin-lefat: 25px;">
+							<span style="align: left;" align="left"><span style="color:darkred;">$\eta$</span>, a measure of<br>resistance to flow</span>
+							</p>
+							<br>
+							<p align="left"><strong>- Newtonian Fluid</strong></p>
+							$$ \sigma = \eta\dot\gamma $$
+							<p align="left"><strong>- Non-newtonian Fluid</strong></p>
+							$$ \sigma = \eta(\dot\gamma)\dot\gamma $$
+						</div>
+						<div id="float-box" style="width:55%; float:left;">
+							<br>
+							<div id="pic" class="0fragment" data-fragment-index="1">
+								<img  align="right" src="figs/shear-regimes.svg" style="width:95%; align:right;">
+							</div>
+						</div>
+					</section>-->
+
+					<section>
+						<div id="float-box" style="float:left;" >
+							<p id="part">Introduction</p>
+							<h3 id="h" class="blue" align="left">Jamming Transition</h3>
+							<p align="left" style="font-size:25px;">(Repulsive, Friction-less)</p>
+						</div>
+						<div width="100%">
+								<div style="width:55%; float: left;">
+									<img width="70%" style="border: none; box-shadow: none;" src="figs/2djamming.svg">
+								</div>
+								<div style="width: 45%; float: right;">
+									<img width="75%" style="border: none; box-shadow:none;" src="figs/dry-fc-new.svg">
+								</div>
+								<br style="clear:both;"/>
+						</div>
+						<div>
+							<div style="width:55%; float:left;">
+									<img width="85%" style="border: none" src="figs/jamming-draw.svg">
+							</div>
+							<div style="width:45%; float:right;">
+								<p align="left" style="float: right align:right;">
+								<strong>Jamming:</strong> Complex fluids,  become <span style="color:green">solid</span> with increasing volume fraction.
+								</p>
+							</div>
+						</div>
+						<br style="clear:both;">
+						<aside class="notes">
+							<p>- Volume fraction</p>
+							<p>- Jamming point, yield stress</p>
+							<p>- Flow curves</p>
+						</aside>
+					</section>
+
+					<!--<section>
+						<div id="float-box" style="float:left;" >
+							<h3 id="h" class="blue" align="left">Details of Interactions</h3>
+						</div>
+						<div width="100%">
+								<div style="width:55%; float: left;">
+									<p align="left">Friction</p>
+									<p align="left">The role of dissipation</p>
+									<p align="left">Thermal Fluctuations</p>
+									<p align="left"><span style="color:darkgreen;">Attraction</span></p>
+								</div>
+								<div style="width: 45%; float: right;">
+								</div>
+								<br style="clear:both;"/>
+						</div>
+						<div>
+							<div style="width:55%; float:left;">
+							</div>
+							<div style="width:45%; float:right;">
+								<p align="left" style="float: right align:right;">
+								</p>
+							</div>
+						</div>
+						<br style="clear:both;">
+					</section>-->
+
+					<section>
+						<div id="float-box" style="float:left;" >
+							<p id="part">Introduction</p>
+							<h3 id="h" class="blue" align="left">Motivation</h3>
+						</div>
+						<br style="clear:both;">
+						<p align="center">How does <span style="color:green;">attraction</span> change the rheology of soft particles?<br>
+						<span style="color:darkblue">(Part I)</span></p>
+						<div width="100%">
+							<div style="width:50%; float:left">
+								<img width="100%" style="border:none;" src="figs/SandCastle.jpg">
+							</div>
+							<div style="width:10%; float:center;">
+							</div>
+							<div style="width:40%; float:right">
+								<div align="left">
+									<br>
+									<strong>Examples:</strong>
+									<ul align="right">
+										<li>Capillary bridges</li>
+										<li>Polymeric suspensions</li>
+									</ul>
+									</div>
+								</div>
+								<br style="clear:both;"/>
+								<div style="width:47%; float:left;">
+								<p align="left">Details of interactions?</p>
+								</div>
+								<div style="width:53%; float:left;">
+									<ul style="list-style-type:none;">
+										<li>Role of dissipation <span style="color:darkblue">(Part II)</span></li>
+										<li>Thermal fluctuations <span style="color:darkblue">(Part III)</span></li>
+									<ul>
+								</div>
+								<br style="clear:both;"/>
+							</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size:70px; color:rgba(0,129,205,1)">I. Weak Attractive Interactions<p> 
+					</section>
+					<section>
+						<div style="width:100%;">
+							<div align="left" style="width:50%; float: left;">
+								<div id="float-box" style="float:left;" >
+									<p id="part">I. Weak Attractive Interactions</p>
+									<h3 id="h" class="blue" align="left">Simulation Setup</h3>
+								</div>
+								<br style="clear:both;">
+								<strong>Conservative Force:</strong>
+								<p>Harmonic repulsive core
+								<br>Small <span style="color:green;">attractive</span> tail:</p>
+								<p align="center">Range=$2u$<br>
+								Depth $\propto \epsilon u$</p>
+								<p><strong>Dissipative Force:</strong><br>($\text{CD}_n$ Model)</strong></p>
+								<p align="center">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+							</div>
+							<div align="center" style="width:50%; float: left;">
+								<img width="85%" src="figs/f1-t3.svg" style="border:none; box-shadow:none;">
+								<video align="center" width="70%" data-autoplay loop="true" controls>
+									<source src="videos/rep.ogg" type="video/ogg">
+								</video>
+							</div>
+							<br style="clear:both;">
+						</div>
+
+					<aside class="notes">
+						Test
+					</aside>
+					</section>
+					<!--<section>
+						<div style="width:100%;">
+							<div align="left" style="width:55%; float: left;">
+								<img width="70%" src="figs/f1-t3.svg" style="border:none; float:left; box-shadow:none;">
+							</div>
+							<div align="center" style="width:45%; float: left;">
+								<video align="right" width="100%" data-autoplay loop="true" controls>
+									<source src="videos/rep.ogg" type="video/ogg">
+								</video>
+							</div>
+							<br style="clear:both;">
+						</div>
+						<div style="width:100%;">
+							<div align="left" style="width:50%; float: left;">
+								<strong>Conservative Force:</strong>
+								<p>Harmonic repulsive core
+								<br>Small <span style="color:green;">attractive</span> tail:</p>
+								<p align="center">Range=$2u$<br>
+								Depth $\propto \epsilon u$</p>
+							</div>
+							<div align="right" style="width:50%; float: left;">
+								<p><strong>Dissipative Force:<br>($\text{CD}_n$ Model)</strong></p>
+								<p align="right">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+							</div>
+							<br style="clear:both;">
+						</div>
+
+					<aside class="notes">
+						Test
+					</aside>
+					</section>-->
+
+					<section data-transition="slide-in fade-out">
+						<div width="100%">
+							<div align="left" style="width:50%;float:left">
+								<div id="float-box" style="float:left;" >
+									<p id="part">I. Weak Attractive Interactions</p>
+									<h3 id="h" class="blue" align="left">Flow Curves</h3>
+									<p style="font-size:25px;">($N=1000$, $u=2\times10^{-4}$)</p>
+								</div>
+								<br style="clear:both;">
+								<div align="left">
+										<strong>Repulsion-dominated regime:</strong>
+										<p>- Bagnold scaling</p>
+										$$\sigma \sim \dot\gamma^2$$
+								<br>
+										<strong>Attraction-dominated regime:</strong>
+										<p>- Finite <span style="color:green">yield stress</span><br>
+										- <span style="color:green;">Non-monotonic</span> flow curves</p>
+							  </div>
+							</div>
+							<div style="width:50%; float:right">
+								<img src="figs/fc-u2e-4-diff2-phi2.svg" style="width:90%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;"/>
+						<!--hr>
+						<p align="left" style="font-size: 25px">E. Irani, P. Chaudhuri, C. Heussinger, Phys. Rev. Lett. <strong>112,</strong> 188303 (2014)</p>
+							<br style="clear:both;"/>
+						</div> -->
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+
+					<section data-transition="fade-in">
+						<div width="100%">
+							<div align="left" style="width:50%; float:left">
+								<div id="float-box" style="float:left;" >
+									<p id="part">I. Weak Attractive Interactions</p>
+									<h3 id="h" class="blue" align="left">Flow Curves</h3>
+									<p style="font-size:25px;">($N=1000$, $u=2\times10^{-4}$)</p>
+								</div>
+								<br style="clear:both;">
+								<div align="left">
+								<br>
+									<strong>Phase diagram:</strong>
+									<img align='center' src="figs/yield-stress-phi-u2e-4-2.svg" style="width:100%; border:none; box-shadow:none;">
+							  </div>
+							</div>
+							<div style="width:50%; float:right">
+								<img src="figs/fc-u2e-4-diff2-phi2.svg" style="width:90%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;"/>
+						</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+
+					<!--<section>
+						<div width="100%">
+								<div id="float-box" style="float:left;" >
+									<h3 id="h" class="blue" align="left">Movies</h3>
+								</div>
+								<br style="clear:both;">
+								<div style="width:50%; float: left;">
+										Attraction-dominated: $\dot\gamma=10^{-6}$
+										<video width="100%" autoplay="true" loop="true" controls>
+											<source src="videos/att.ogg" type="video/webm">
+										</video>
+								</div>
+								<div style="width: 50%; float: right;">
+										Repulsion-dominated: $\dot\gamma=10^{-4}$
+										<video width="100%" autoplay="true" loop="true" controls>
+											<source src="videos/rep.ogg" type="video/webm">
+										</video>
+								</div>
+								<br style="clear:both;"/>
+						</div>
+					</section>-->
+
+					<section data-transition="slide-in fade-out">
+							<div width="100%">
+								<div style="width:53%; float:left;">
+									<div align="left" id="float-box" style="float:left;" >
+										<p id="part">I. Weak Attractive Interactions</p>
+										<h3 id="h" class="blue" align="left">Connectivity</h3>
+										<p style="font-size:25px;">($N=1000$, $\phi=0.75$)</p>
+									</div>
+											<br style="clear:both;">
+											<div align="left"><strong>2D Systems:</strong>
+											$$z_{\text{iso}}=4$$</div>
+											<br>
+								<div align="left"><strong>Attraction-dominated:</strong>
+										<p align="center" text-align="justify">Nearly-isostatic <br>network of particles</p></div>
+									<br>
+									<div align="left"><strong><span style="color:darkgreen">Attractive</span> </strong><strong>time-scale:</strong>
+									<br>
+									$$\tau_a \approx 1/u$$</div>
+									</div>
+									<div style="width:47%; float:left;">
+										<img align="left" src="figs/z-phi0.75-diff-u-2.svg" style="width:95%; border:none; box-shadow:none;" alt="z-fc-u2e-4">
+									</div>
+									<br style="clear:both;">
+							</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+					<section data-transition="fade-in">
+							<div width="100%">
+								<div style="width:53%; float:left;">
+									<div align="left" id="float-box" style="float:left;" >
+										<p id="part">I. Weak Attractive Interactions</p>
+										<h3 id="h" class="blue" align="left">Connectivity</h3>
+										<p style="font-size:25px;">($N=1000$, $\phi=0.75$)</p>
+									</div>
+											<br style="clear:both;">
+											<div align="left"><strong>2D Systems:</strong>
+											$$z_{\text{iso}}=4$$</div>
+											<br>
+								<div align="left"><strong>Attraction-dominated:</strong>
+										<p align="center" text-align="justify">Nearly-isostatic <br>network of particles</p></div>
+									<br>
+									<div align="left"><strong><span style="color:darkgreen">Attractive</span> </strong><strong>time-scale:</strong>
+									<br>
+									$$\tau_a \approx 1/u$$</div>
+									</div>
+									<div style="width:47%; float:left;">
+										<img align="left" src="figs/z-z0-erate-pres.svg" style="width:95%; border:none; box-shadow:none;" alt="z-fc-u2e-4">
+									</div>
+									<br style="clear:both;">
+							</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+
+					<!--<section>
+						<div width="100%">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">I. Weak Attractive Interactions</p>
+									<h3 id="h" class="blue" align="left">Elastic Spring Network</h3>
+								</div>
+								<br style="clear:both;">
+							<div style="width:50%; float:left;">
+								<p align="left"> - Close to the iso-static point<sup style="font-size:23px; color:green;"><strong>1</strong></sup>:<p>
+									$\delta_\bot\sim {\gamma \over \delta z^{1/2}}$
+									<p align="left"> - Shear modulus:</p>
+									$g_{\text{lin}} \sim \delta z$<br>
+									<p align="left"> - Non-linear loading<sup style="font-size:23px; color:green;"><strong>2,3</strong></sup>:</p>
+								<img width="90%" src="figs/particles-disp.svg" style="higth:50%; border:none; box-shadow:none;">
+							</div>
+							<div style="width:50%; float:right;">
+									$\gamma_{\text{y}} \sim (u\delta z)^{1/2}$<br>
+								<p align="center">$\sigma_{\text{y}} \sim u^{1/2}\delta z^{3/2}$</p>
+						<hr>
+						<p align="left" style="font-size: 15px">¹ M. van Hecke, J. Phys: Condens. Matter, <strong>22</strong>, 033101 (2010).
+						<br>² M. Wyart, et al. , Phys. Rev. Lett. <strong>101</strong>, 215501 (2008).
+						<br>³  O Lieleg, et al. , Phys. Rev. Lett. <strong>99</strong>, 088102 (2007).</p>
+							</div>
+							<br style="clear:both;">
+						</div>
+
+						<aside class="notes">
+							<p>- Linear response: strong non-affine disp. $\delta_\bot$</p>
+							<p>- linear elastic response: shear modulus</p>
+							<p>- yielding point: non-linear loading, tangential motion associated with higher-order longitudinal motion</p>
+							<p></p>
+							<p></p>
+						</aside>
+					</section>-->
+					<!--<section>
+						<div width="100%">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">I. Weak Attractive Interactions</p>
+									<h3 id="h" class="blue" align="left">Elastic Spring Network</h3>
+								</div>
+								<br style="clear:both;">
+							<div style="width:50%; float:left;">
+								<p align="left"> - Close to the iso-static point¹:<p>
+									$\delta_\bot\sim {\gamma \over \delta z^{1/2}}$
+									<p align="left"> - Shear modulus:</p>
+									$g_{\text{lin}} \sim \delta z$<br>
+									<p align="left"> - Non-linear loading²⁻³:</p>
+								<img width="90%" src="figs/particles-disp.svg" style="higth:50%; border:none; box-shadow:none;">
+							</div>
+							<div style="width:50%; float:right;">
+								<img align="center" width="70%" src="figs/snap-z-network-N1000-u2e-4-phi0.75-erate1e-6-1.jpg" style="higth:50%; border:none; box-shadow:none;">
+									$\gamma_{\text{y}} \sim (u\delta z)^{1/2}$<br>
+								<p align="center">$\sigma_{\text{y}} \sim u^{1/2}\delta z^{3/2}$</p>
+						<hr>
+						<p align="left" style="font-size: 15px">¹ M. van Hecke, J. Phys: Condens. Matter, <strong>22</strong>, 033101 (2010).
+						<br>² M. Wyart, et al. , Phys. Rev. Lett. <strong>101</strong>, 215501 (2008).
+						<br>³  O Lieleg, et al. , Phys. Rev. Lett. <strong>99</strong>, 088102 (2007).</p>
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section>-->
+
+					<section data-transition-speed="slow">
+						<div width="100%">
+							<div align="left" id="float-box" style="float:left;" >
+									<p id="part">I. Weak Attractive Interactions</p>
+								<h3 id="h" class="blue" align="left">Yield Stress: Scaling</h3>
+							</div>
+							<br style="clear:both;">
+							<div style="width:50%; float:left; font-size:35px;">
+								<img align="center" width="70%" src="figs/snap-z-network-N1000-u2e-4-phi0.75-erate1e-6-1.jpg" style="higth:50%; border:none; box-shadow:none; margin:5px;">
+								<p align="left" style="margin:5px;">Below the Jamming:</p> 
+								$\sigma_{\text{y}} \propto u^{1/2}\delta z^{3/2}$ 
+								<p align="left" style="margin:5px;">Above the Jamming:</p> 
+								$\sigma_{\text{y}} \propto \delta\phi^\alpha$ 
+							</div>
+							<div style="width:50%; float:left;">
+								<img width="80%" src="figs/yield-stress-scaling3.svg" style="higth:50%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section>
+
+					<!--<section>
+								<div align="left" id="float-box" style="float:left;" >
+									<h3 id="h" class="blue" align="left">Structure Factor</h3>
+								</div>
+								<br style="clear:both;">
+						<div width="100%">
+							<div style="width:47%; float:left;">
+								<img align="left" src="figs/sf-tot-u2e-4-phi075-1.svg" style="width:85%; border:none; box-shadow:none;" alt="z-fc-u2e-4">
+							</div>
+							<div style="width:53%; float:right; align:right;">
+								<img align="center" src="figs/snap-N1000-u2e-4-phi0.75-erate1e-6.svg" style="width:60%; border:none; box-shadow:none;">
+								<br>
+								<div style="width:100%;">
+									<div style="width:73%; float:left;">
+										<img align="left" src="figs/sf-max-u2e-4-phi075.svg" style="width:100%; border:none; box-shadow:none;">
+									</div>
+								<div style="width:27%; float:right; font-size:25px;">
+									<br>
+									<p>$S^* = S(q^*)$</p>
+									<p>$l^* = {2\pi / q^*}$</p>
+									<p>$l^* \approx 5.2$</p>
+								</div>
+								<br style="clear:both;">
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section> -->
+
+					<section>
+						
+						<div width="100%">
+							<div style="width:47%; float:left;">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">I. Weak Attractive Interactions</p>
+									<h3 id="h" class="blue" align="left">Structure Factor</h3>
+								</div>
+								<br style="clear:both;">
+								<img align="left" src="figs/sf-tot-u2e-4-phi075-1.svg" style="width:85%; border:none; box-shadow:none;" alt="z-fc-u2e-4">
+							</div>
+							<div style="width:53%; float:right; align:right;">
+								<img align="center" src="figs/snap-N1000-u2e-4-phi0.75-erate1e-6.svg" style="width:60%; border:none; box-shadow:none;">
+								<img align="center" src="figs/sf-max-u2e-4-phi075.svg" style="width:80%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">I. Weak Attractive Interactions</p>
+							<h3 id="h" class="blue" align="left">Particles Dynamics</h3>
+						</div>
+						<br style="clear:both;">
+						<img align="center" style="width:75%; border:none; box-shadow:none; margin:0px;" src="figs/disp-fields-u2e-4-phi075-2.svg">
+						<div style="width:40%; float:left; font-size:35px;">
+							<p align="left">- Intermediate $\dot\gamma$:</p>
+							<span style="color:red;">Anisotropic </span>dynamics!
+							<p align="left">- Attraction-dominated $\dot\gamma$:</p>
+							Non-affine motion is dominated.
+						</div>
+						<div style="width:60%; float:left;">
+							<img align="right" style="width:90%; border:none; box-shadow:none; " src="figs/v2-dy.svg">
+						</div>
+						<br style="clear:both;">
+					</section>
+					<!--<section data-transition="fade-out">
+						<div align="left" id="float-box" style="float:left;" >
+							<h3 id="h" class="blue" align="left">Non-monotonic Flow Curves</h3>
+						</div>
+						<br style="clear:both;">
+						<br>
+						<div width="100%">
+							<div style="width:41%; float:left;">
+								<br>
+								<div align="left"><strong>Van der Waals loop:</strong><br></div>
+								Mechanical unstability
+								<br>
+								<br>
+								<br>
+								<div align="left">Two phases coexistence:<br></div>
+								<span style="color:red"><strong>Shear Bands</strong></span>
+								<br>
+							</div>
+							<div style="width:59%; float:right;">
+								<img width="100%" src="figs/fc-diff-N-u2e-5-phi0.82-30.svg" style="border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section>-->
+
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">I. Weak Attractive Interactions</p>
+							<h3 id="h" class="blue" align="left">Non-monotonic Flow Curves</h3>
+						</div>
+						<br style="clear:both;">
+						<br>
+						<div width="100%">
+							<div align="left" style="width:41%; float:left;">
+								<strong>Small Systems</strong> (N=1000):
+								<p>- Shear bands don't fit inside</p>
+								<br>
+								<strong>Large Systems</strong>:
+								<p>- Shear bands reduce the non-monotonic part<br>- History dependence</p>
+							</div>
+							<div style="width:59%; float:right;">
+								<img width="100%" src="figs/fc-diff-N-u2e-5-phi0.82-22.svg" style="width:100%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section>
+
+					<section data-transition="slide">
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">I. Weak Attractive Interactions</p>
+							<h3 id="h" class="blue" align="left">Shear Bands</h3>
+						</div>
+						<br style="clear:both;">
+						<div style="width:70%; float:left;">
+							<img width="100%" src="figs/snap-sb-N20000-5e-6-dark-2.svg" style="border:none; box-shadow:none; margin:0px;">
+						</div>
+						<div style="float:left; width:30%;">
+							<p align="center">Iso-static <span style="color:green">solid</span> + fluid band</p>
+							<br>
+							<img width="100%" src="figs/sb-size-lin.svg" style="border:none; box-shadow:none;">
+						</div>
+						<br style="clear:both;">
+					</section>
+					<!--<section data-transition="slide">
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">I. Weak Attractive Interactions</p>
+							<h3 id="h" class="blue" align="left">Shear Bands</h3>
+						</div>
+						<br style="clear:both;">
+						<div style="width:60%; float:left;">
+							<img width="100%" src="figs/snap-sb-N20000-5e-6-dark-2.svg" style="border:none; box-shadow:none;">
+							<p align="left">Iso-static <span style="color:green">solid</span> + <span style="color:red">fluid</span> band</p>
+						</div>
+						<div style="float:left; width:40%;">
+							<img width="100%" src="figs/sb-shearrate-profiles-rampup.svg" style="border:none; box-shadow:none;">
+							<img width="100%" src="figs/sb-size-lin.svg" style="border:none; box-shadow:none;">
+						</div>
+						<br style="clear:both;">
+					</section>-->
+				</section>
+				<!--++++++++++++++++++++++++++++++++++++++++-->
+				<!--<section>
+					<div>
+						<div align="left" style="width:53%; float:left; border-right: thin solid #000000;">
+							<img width="100%" src="figs/f1-t3.svg" style="border:none; float:left; box-shadow:none;">
+							<br>
+							<br>
+							<strong>Including attraction:</strong>
+							<p style="margin-left:40px;">- Finite <span style="color:green">yield stress</span> at $\phi<\phi_J$ <br>
+								- <span style="color:red;">Non-monotonic</span> flow curves<br>
+								- Shear-banding, ...</p>
+							</div>
+							<div style="width:45%; float:right;">
+								<br>
+								<p align="left" style="font-size:60px;">Question:</p>
+								<p align="left" style="margin-left:40px;">How robust are these results with respect to the interaction details?</p>
+								<br>
+								<p><strong>The role of <span style="color:darkgreen;">energy dissipation</span></strong></p>
+							</div>
+							<br style="clear:both;">
+						</div>
+				</section>-->
+
+				<section>
+					<section>
+						<p style="font-size:70px; color:rgba(0,129,205,1)">II. Role of Dissipation<p> 
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">Dissipation Models</h3>
+						</div>
+						<br style="clear:both;">
+						<div style="font-size:33px;">
+						<div style="width:60%; float:left;">
+							<p align="left" >I. Contact dissipation in normal direction:<br>($\text{CD}_n$ Model)</p>
+							$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$
+							<p align="left">II. Full velocity dissipation:<br>($\text{CD}$ Model)</p>
+							$\vec{F}_{\text{diss.}} =  -b(\vec{v}_i - \vec{v}_j)$
+							<p align="left" style="clear:both;" >III. Reservoir Dissipation:<br>($\text{RD}$ Model)</p>
+							$\vec{F}_{\text{diss.}} =  -\zeta(\vec{v}_i - \dot\gamma y \hat{x})$
+						</div>
+						<div style="width:40%; float:right; margin:0;">
+							<img align="center" width="50%" style="border: none; box-shadow:none;" src="figs/cdn-particles.svg">
+							<img align="center" width="50%" style="border: none; box-shadow:none;" src="figs/cd-particles.svg">
+							<img align="center" width="54%" style="border: none; box-shadow:none;" src="figs/rd-particles.svg">
+						</div>
+						<br style="clear:both;">
+						</div>
+					</section>
+					
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">$\text{CD}_n$ Model: Damping Regimes</h3>
+						</div>
+						<br style="clear:both;">
+						<div width="100">
+								<p align="left">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+							<div style="width:40%; float:left;">
+								<img align="center" width="70%" style="border: none; box-shadow:none;" src="figs/cdn-particles.svg">
+							<br>
+							Damping time-scale:
+							$$\tau_d = {m\over b}$$<br>
+							</div>
+								<div style="width:60%; float:right;">
+									<img width="100%" src="figs/fc-u7e-4-phi0.75-diff-b-inset.svg" style="border:none; box-shadow:none;">
+								</div>
+								<br style="clear:both;">
+							</div>
+							<br>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">$\text{CD}_n$ Model vs. $\text{CD}$  Model</h3>
+						</div>
+						<br style="clear:both;">
+						<br>
+						<div width="100%">
+							<div align="left" style="width:50%; float:left;">
+								<p>Until here: <strong>$\text{CD}_n$ Model</strong></p>
+								<p align="left">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+								<img align="center" width="70%" style="border: none; box-shadow:none;" src="figs/cdn-particles.svg">
+							</div>
+							<div align="right" style="width:50%; float:left;">
+								<p>From here: <strong>$\text{CD}$  Model</strong></p>
+								<p align="right">$\vec{F}_{\text{diss.}} = -b(\vec{v}_i - \vec{v}_j)$</p>
+								<img align="center" width="70%" style="border: none; box-shadow:none;" src="figs/cd-particles.svg">
+							</div>
+							<div style="clear:left;"></div>
+						</div>
+
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+
+					<section data-transition="slide-in fade-out">
+						<div width="100%">
+							<div align="left" style="width:52%; float:left">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">II. Role of Dissipation</p>
+									<h3 id="h" class="blue" align="left">Flow Curves</h3>
+									<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$)</p>
+								</div>
+								<br style="clear:both;">
+								<br>
+								<div align="left">
+										<strong>Over-damped regime:</strong>
+										<p>- Viscous behaviour</p>
+										<p align="center">$\sigma \sim \dot\gamma$</p>
+										<br>
+							  </div>
+							</div>
+							<div style="width:48%; float:right">
+								<br>
+								<img src="figs/diss-full-vel-fc-u2e-5-phi0.75-diff-b-slides10.svg" style="width:100%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;"/>
+						</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+					<section data-transition="fade-out">
+						<div width="100%">
+							<div align="left" style="width:52%; float:left">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">II. Role of Dissipation</p>
+									<h3 id="h" class="blue" align="left">Flow Curves</h3>
+									<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$)</p>
+								</div>
+								<br style="clear:both;">
+								<br>
+								<div align="left">
+										<strong>Over-damped regime:</strong>
+										<p>- Viscous behaviour</p>
+										<p align="center">$\sigma \sim \dot\gamma$</p>
+										<br>
+										<strong>Decereasing damping:</strong>
+										<p>- <span style="color:green">Inertial flow</span><br>
+										- <span style="color:green;">Non-monotonic</span> flow curves</p>
+							  </div>
+							</div>
+							<div style="width:48%; float:right">
+								<br>
+								<img src="figs/diss-full-vel-fc-u2e-5-phi0.75-diff-b-slides12.svg" style="width:100%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;"/>
+						</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+
+					<section data-transition="fade-out">
+						<div width="100%">
+							<div align="left" style="width:52%; float:left">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">II. Role of Dissipation</p>
+									<h3 id="h" class="blue" align="left">Flow Curves</h3>
+									<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$)</p>
+								</div>
+								<br style="clear:both;">
+								<br>
+								<div align="left">
+										<strong>Over-damped regime:</strong>
+										<br>
+										<p>- <span style="color:red;">Elastic</span> forces vs. <span style="color:red;">dissipative</span> forces</p>
+										<p>- Weissenberg number</p>
+										<p align="center">$Wi={b\dot\gamma\over \epsilon u}$</p>
+							  </div>
+							</div>
+							<div style="width:48%; float:right">
+								<img src="figs/diss-full-vel-fc-stress-z-diffu-phi0.75-diffb-2.svg" style="width:85%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;"/>
+						</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+					<section data-transition="fade-out">
+						<div width="100%">
+							<div align="left" style="width:52%; float:left">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">II. Role of Dissipation</p>
+									<h3 id="h" class="blue" align="left">Flow Curves</h3>
+									<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$)</p>
+								</div>
+								<br style="clear:both;">
+								<br>
+								<div align="left">
+										<strong>Under-damped regime:</strong>
+										<p>- <span style="color:green">Inertial flow</span><br>
+										- <span style="color:green;">Non-monotonic</span> flow curves</p>
+										<br>
+										<p align="center"><strong>Qustion:</strong> What is happening at the non-monotonic part?</p>
+							  </div>
+							</div>
+							<div style="width:48%; float:right">
+								<br>
+								<img src="figs/diss-full-vel-fc-u2e-5-phi0.75-diff-b-underdamped.svg" style="width:100%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;"/>
+						</div>
+
+						<aside class="notes">
+							Test
+						</aside>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">Movies: Velocity & Connectivity</h3>
+						</div>
+						<br style="clear:both;">
+						<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$, $b=0.05$, $\dot\gamma=2\times10^{-4}$)</p>
+						<div width="100%">
+								<div style="width:50%; float: left;">
+										<video id="particlesVideo" width="100%" controls data-autoplay>
+											<source src="videos/1.ogg" type="video/ogg">
+										</video>
+								</div>
+								<div style="width: 50%; float: right;">
+										<video id="contactsVideo" width="100%" controls data-autoplay>
+											<source src="videos/2.ogg" type="video/ogg">
+										</video>
+								</div>
+								<br style="clear:both;"/>
+						</div>
+					</section>
+					<section>
+						<div width="100%">
+								<div align="left" style="width:50%; float:left;">
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">Shear Bands</h3>
+						</div>
+						<br style="clear:both;">
+								</div>
+								<div align="right" style="width:50%; float:right;">
+										<p align="left" data-fragment-id="1">- <span style="color:green">Viscous</span> + <span style="color:green">inertial</span> band<br>
+										- Stress localization</p>
+								</div>
+								<br style="clear:both;">
+									<img src="figs/diss-full-vel-sb-stress-2.svg" style="width:80%; border:none; box-shadow:none;">
+						</div>
+					</section>
+					<!--<section>
+						<div width="100%">
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">Stress Localization</h3>
+						</div>
+						<br style="clear:both;">
+						<img src="figs/cd-stressv-field-evo.svg" style="width:75%; border:none; box-shadow:none;">
+						<p align="left">Averaging over large $\Delta\gamma$ :</p> <p><span style="color:green">Virial stress</span> stays <span style="color:red">heteregeneous.</span></p>
+						</div>
+					</section>-->
+
+					<section>
+						<div width="100%">
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">Stress Localization</h3>
+						</div>
+						<br style="clear:both;">
+						<img src="figs/cd-press-fields.svg" style="width:75%; border:none; box-shadow:none;">
+						<p align="left">Total pressure (kinetic + virial terms):</p> 
+						<ul style="list-style-type:none;">
+							<li>- <span style="color:green;">Continously</span> changing over the interface.</li>
+							<li>- Stable shear bands.</li>
+						</ul>
+						</div>
+					</section>
+					<!--<section data-transition="fade-out">
+						<div align="left" id="float-box" style="float:left;" >
+							<h3 id="h" class="blue" align="left">Ramping Simulations</h3>
+						<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$, $b=0.05$)</p>
+						</div>
+						<br style="clear:both;">
+						<div align="left" style="width:50%; float:left;">
+							<img src="figs/diss-full-vel-fc-ramp-u2e-5-phi075-b005.svg" style="width:100%; border:none; box-shadow:none;">
+						</div>
+						<div align="left" style="width:50%; float:left; visibility:hidden;">
+							<img src="figs/cd-ramping-profiles-erate5e-5.svg" style="width:100%; border:none; box-shadow:none;">
+						</div>
+						<br style="clear:both;">
+					</section>-->
+					<section data-transition="slide">
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">Ramping Simulations</h3>
+						<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$, $b=0.05$)</p>
+						</div>
+						<br style="clear:both;">
+						<div align="left" style="width:50%; float:left;">
+							<img src="figs/diss-full-vel-fc-ramp-u2e-5-phi075-b005-2.svg" style="width:100%; border:none; box-shadow:none;">
+						</div>
+						<div align="left" style="width:50%; float:left;">
+							<img src="figs/cd-ramping-profiles-erate5e-5.svg" style="width:100%; border:none; box-shadow:none;">
+						</div>
+						<br style="clear:both;">
+					</section>
+					<!--<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">Reservoir Dissipation</h3>
+						</div>
+						<br style="clear:both;">
+						<div style="width:50%; float:left;">	
+							<p align="left">Deviation form the flow velocity:</p>
+							Viscous damping!
+							<br>
+							<br>
+							$$\vec{v}_{\text{flow}}(y) = \dot\gamma y \hat{x}$$
+							<br>
+							$$\vec{F}_{\text{diss.}}  =  -\zeta(\vec{v}_i - \vec{v}_{\text{flow}})$$
+						</div>
+						<div style="width:50%; float:left;">	
+							<div align="center" style="margin-left:50px;"><span style="margin-left:25px; font-size:25px;">$(\phi=0.75)$</span></div>
+							<img src="figs/rd-fc-diffu-phi0.75.svg" style="width:100%; border:none; box-shadow:none; margin-top:-15px;">
+						</div>
+						<br style="clear:both;">
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">$\text{RD}$  Model: Viscosity</h3>
+						</div>
+						<br style="clear:both;">
+						
+						<div style="width:53%; float:left;">	
+							<p align="left">- Viscosity:</p>
+							$$\eta(\dot\gamma)=\frac{\sigma(\dot\gamma)}{\dot\gamma}$$
+							<p align="left">- Solvent viscosity (Stokes law):</p>
+							$$\eta_s=\frac{\zeta}{3\pi R}$$
+
+							<p align="left">- Damping time-scale:</p>
+							$$\tau_d = \frac{m}{\zeta}$$
+						</div>
+						<div style="width:47%; float:left;">	
+							<img src="figs/rd-viscosity-rep-rescale.svg" style="width:100%; border:none; box-shadow:none;">
+							<div align="center">
+							<p align="center">Repulsive systems:</p>
+							<ul style="list-style-type:none;">
+								<li>- Newtonian</span></li>
+								<li>- Shear-thickening</span></li>
+							</ul>
+							</div>
+						</div>
+						<br style="clear:both;">
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">II. Role of Dissipation</p>
+							<h3 id="h" class="blue" align="left">$\text{RD}$  Model: Viscosity</h3>
+						</div>
+						<br style="clear:both;">
+						<img src="figs/rd-fc-visc-u2e-5-b0.svg" style="width:75%; border:none; box-shadow:none;">
+						<div style="width:50%; float:left;">
+							Attractive systems:
+						</div>
+						<div style="width:50%; float:left;">
+							<ul style="list-style-type:none;">
+								<li>- <span style="color:green;">Shear-thinning</span></li>
+								<li>- Newtonian</span></li>
+								<li>- Shear-thickening</span></li>
+							</ul>
+						</div>
+						<br style="clear:both;">
+					</section>-->
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size:70px; color:rgba(0,129,205,1)">III. Thermal Fluctuations<p> 
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">III. Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Thermal Fluctuations</h3>
+						</div>
+						<br style="clear:both;">
+						<div width="100%">
+							<div align="left" style="width:50%; float:left;">
+								<br>
+								<p>- Back to $\text{CD}_n$ Model</strong></p>
+								<p align="center">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+								<br>
+								<p>- Random force: <strong>DPD Scheme</strong></p>
+								<!--<p align="center">$\vec{F}_{\text{R}} = \nu \alpha(\Delta t)^{-1/2} \hat{r}$</p>
+								<p align="center">$\nu = (2K_b T b)^{1/2}$</p>-->
+								<p align="center">$\vec{F}_{\text{R}} = \alpha\sqrt{\frac{2b K_B T}{\Delta t}}\hat{r}$</p>
+								<p align="center">$\alpha$: Gaussian random number</p>
+							</div>
+							<div align="right" style="width:50%; float:left;">
+								<img align="center" width="65%" style="border: none; box-shadow:none;" src="figs/cdn-t-particles.svg">
+								<p align="right">- Ratio of <span style="color:green">thermal</span> energy to attractive energy:</p>
+								<p align="right">$\tau = K_B T/\epsilon u^2$</p>
+							</div>
+							<div style="clear:left;"></div>
+						</div>
+						<aside class="notes">
+							<p>- Switch on the temperature</p>
+							<p>- back to the $CD_n$ model</p>
+							<p>- Random force form DPD</p>
+							<p>- $\tau$: thermal energy in units of attractive energy</p>
+
+						</aside>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">III. Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Flow Curves</h3>
+						</div>
+						<br style="clear:both;">
+						<div width="100%">
+							<div align="left" style="width:25%; float:left;">
+								- Stress:
+								<p align="left" style="font-size:30px;">$\sigma_T = \frac{K_B T}{R^3}$</p>
+								<br>
+								- Time-scale:
+								<p align="left" style="font-size:30px;">$t_T = R \sqrt{\frac{m}{K_B T}}$</p>
+								<br>
+								<strong>Peclet number</strong>
+								<p align="center" style="font-size:30px;">$P_e=\dot\gamma t_T$</p>
+							</div>
+							<div align="right" style="width:75%; float:left;">
+								<img align="right" width="100%" style="border: none; box-shadow:none;" src="figs/thermal-fc-u2e-4-diff-phi-diff-tau-thesis-legends.svg">
+								<p align="right" style="font-size:40px;"><span style="color:green;">Athermal</span> + <span style="color:red;">intermediate</span> + <span style="color:darkblue;">thermal</span> regimes!</p>
+							</div>
+							<div style="clear:left;"></div>
+						</div>
+						<aside class="notes">
+							<p>- Dimensional analysis: thermal stress and time scale</p>
+							<p>- Peclet number: competition between convection and diffusion</p>
+							<p>- Three distinct regimes of flow curves: athermal - intermediate - thermal</p>
+							<p>- thermal regime: repulsive glassy physics!</p>
+							<p>- we are interested in the intemediate regime</p>
+
+						</aside>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">III. Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Connectivity</h3>
+						</div>
+						<br style="clear:both;">
+						<img align="center" width="100%" style="border: none; box-shadow:none;" src="figs/thermal-3d-z.svg">
+						<p><span style="color:green;">Intermediate</span> to <span style="color:green;">thermal</span> regime:<br>Sharp drop in $z$</p>
+						<aside class="notes">
+							<p>- Already know about the attraction-repulsin transition by changing $\dot\gamma$</p>
+							<p>- athermal-thermal transition is discontinous</p>
+							<p>- More clear if we look at the yield connectivity</p>
+						</aside>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">III. Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Connectivity</h3>
+						</div>
+						<br style="clear:both;">
+						<div align="left" style="width:50%; float:left;">
+							<br>
+							Yield connectivity:
+							$$z_y=\lim_{\dot\gamma \to 0} z(\dot\gamma)$$
+							Here:
+							$$z_y \approx z(\dot\gamma=10^{-6})$$
+						</div>
+						<div style="width:50%; float:left;">
+							<img align="center" width="100%" style="border: none; box-shadow:none;" src="figs/thermal-yield-zall-tau-u2e-4-phi0.82.svg">
+						</div>
+						<br style="clear:both;">
+							<p><span style="color:green;">Intermediate</span> to <span style="color:green;">thermal</span> regime:</p>
+							$$z_y^{\text{(rep)}} \approx z_y^{\text{(att)}}$$
+
+						<aside class="notes">
+							<p>- Define the yield connectivity</p>
+							<p>- athermal-thermal transitions is discontinous</p>
+							<p>- at the edge of the transition: att. and rep. connectivity equals!</p>
+							<p>- What is happening in the intermediate regime?</p>
+						</aside>
+					</section>
+
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">III. Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Movies</h3>
+							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$, $\dot\gamma=10^{-6}$)</p>
+						</div>
+						<br style="clear:both;">
+						<div width="100%">
+							<div style="width:50%; float: left;"> 
+								$\tau=0.0$
+								<video id="particlesVideo" width="100%" controls data-autoplay>
+									<source src="videos/tau0-3.ogg" type="video/ogg">
+								</video>
+							</div>
+							<div style="width: 50%; float: right;">
+								$\tau=2\times10^{-1}$
+								<video id="contactsVideo" width="100%" controls data-autoplay>
+									<source src="videos/tau2e-1-3.ogg" type="video/ogg">
+								</video>
+							</div>
+							<br style="clear:both;"/>
+						</div>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">III. Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Phase Separation</h3>
+							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$)</p>
+						</div>
+						<br style="clear:both;">
+						<img align="center" width="70%" style="border:none; box-shadow:none;" src="figs/thermal-snap-shear-noshear.svg">
+						<br>
+						<div align="left" style="width:40%; float:left;">
+							<br>
+							<p align="left">Phase Structures:</p>
+						</div>
+						<div align="left" style="width:60%; float:left;">
+							<img align="center" width="90%" style="border:none; box-shadow:none;" src="figs/thermal-clust-all-circ.svg">
+						</div>
+						<br style="clear:both;">
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">III. Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Phase Separation</h3>
+							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$)</p>
+						</div>
+						<br style="clear:both;">
+						<div style="width:30%; float:left;">
+							<br>
+							<br>
+							<br>
+							$$N^* = \frac{N^{(\text{in clust.})}}{N}$$
+						</div>
+						<div style="width:70%; float:left;">
+							<img align="center" width="100%" style="border:none; box-shadow:none;" src="figs/thermal-Nstar-image.svg">
+						</div>
+						<br style="clear:both;">
+						$\tau$, $\dot\gamma$: Complicated interplay 
+					</section>
+				</section>
+				<section style="text-align: left;">
+						<div align="left" id="float-box" style="float:left;" >
+							<h3 id="h" class="blue" align="left">Conclusion</h3>
+						</div>
+						<br style="clear:both;">
+					<div width="100%" style="font-size:30px;">
+					<div style="width:50%; float:left;">
+							<p style="font-size:35px; color:darkred;"><strong>Attraction + $\text{CD}_n$</strong></span></p>
+							<ul style="list-style-type:none;">
+								<li><strong>Finite yield stress</strong> ($\phi<\phi_{\text{J}}$)</li>
+									<ul style="list-style-type:none;">
+										<li><span style="color:green;">Weak solid</span> develops</li>
+										<li>Rheology $\leftrightarrow$ Connectivity</li>
+									</ul>
+								<li><strong>Non-monotonic flow curves</strong></li>
+									<ul style="list-style-type:none;">
+										<li>Persistent <span style="color:green;">shear bands</span></p>
+									</ul>
+							</ul>
+							<p align="left" style="font-size: 20px"><span style="color:darkblue;">"Impact of Attractive Interactions on the Rheology of Dense Athermal Particles"</span>, E. Irani, P. Chaudhuri, C. Heussinger, Phys. Rev. Lett. <strong>112,</strong> 188303 (2014)<br><span style="margin-top:-520px; display:inline-block; font-size: 18px;background: rgba(0,100,50,0.9); color:white; padding:0px 1px 0px 1px;"> Editors' Suggestion </span></p>
+							<p align="left" style="font-size: 20px"><span style="color:darkblue;">"Athermal Rheology of Weakly Attractive Soft Particles"</span>, E. Irani, P. Chaudhuri, C. Heussinger, submitted to Phys. Rev. E, arXiv:1605.01222 [cond-mat.soft] (2016)</p>
+					</div>
+					<div align="left" style="width:48%; float:right;">
+						<p align="left" style="font-size:35px; color:darkred;"><strong>Dissipation: $\text{CD}$ Model</strong></span></p>
+						<ul style="list-style-type:none;">
+							<li><strong>Overdamped:</strong></li>
+								<ul style="list-style-type:none;">
+									<li><span style="color:green;">Viscous</span> flow</li>
+									<li>$Wi$: scaling flow curves</li>
+								</ul>
+							<li><strong>Underdamped</strong></li>
+								<ul style="list-style-type:none;">
+									<li>Persistent <span style="color:green;">shear bands</span></li>
+									<li>viscous flow + inertial flow</li>
+								</ul>
+						</ul>
+						<hr>
+						<p style="font-size:35px; color:darkred;"><strong>Thermal Fluctuations</strong></span></p>
+						<ul style="list-style-type:none;">
+							<li>$z$: Discont. transition</li>
+							<li>Intermeditae $\tau$: De-mixing</li>
+						</ul>
+					</div>
+					<br style="clear:both;">
+				</div>
+				</section>
+				<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<h3 id="h" class="blue" align="left">Acknowledgement</h3>
+						</div>
+						<br style="clear:both;">
+					<div width="100%" style="font-size:25px;">
+					<div align="left" style="width:50%; float:left;">
+							<p style="font-size:35px; color:darkred;"><strong>Scientific Supervision</strong></span></p>
+							<ul>
+								<li>Claus Heussinger</li>
+								<li>Pinaki Chaudhuri</li>
+								<li>Annette Zippelius</li>
+								<li>The Examination Board</li>
+							</ul>
+							<p style="font-size:35px; color:darkred;"><strong>Colleagues</strong></span></p>
+							<ul>
+								<li> Elham, (<span style="color:red;">Dr.</span>) Matthias, Moumita, Polomi, Henry, Sina and Pascal</li>
+							</ul>
+							<p style="font-size:35px; color:darkred;"><strong>People from other groups</strong></span></p>
+							<ul>
+								<li> Navid (<span style="color:red;">PhD</span>), Timo, Ali, Ebad (<span style="color:red;">PhD</span>), Stephan, Benjamin, Fabian, Salvatore, Johannes and others, including friends from the third floor!</li>
+							</ul>
+					</div>
+					<div align="left" style="width:50%; float:right;">
+						<p style="font-size:35px; color:darkred;"><strong>Long-distance Support</strong></span></p>
+						<ul>
+							<li>My family</li>
+						</ul>
+						<br>
+						<br>
+						<img align="center" width="100%" style="border: none; box-shadow:none; margin:0px;" src="figs/compiling.svg">
+						<a href="http://xkcd.com/303/" style="margin:0px;">http://xkcd.com/303/</a>
+					</div>
+					<br style="clear:both;">
+				</div>
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+var v1 = document.getElementById("particlesVideo"),
+	v2 = document.getElementById("contactsVideo");
+
+v1.addEventListener('play', function(e) {
+		if (v2.paused) v2.play();
+		},false);
+
+v1.addEventListener('pause', function(e) {
+		if (v2.paused==false) v2.pause();
+		},false);
+
+v2.addEventListener('play', function(e) {
+		if (v1.paused) v1.play();
+		},false);
+
+v2.addEventListener('pause', function(e) {
+		if (v1.paused==false) v1.pause();
+		},false);
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				controls: false,
+				progress: true,
+				center: true,
+				viewDistance: 3,
+				slideNumber: false,
+
+//				math: {
+//					mathjax: 'MathJax/MathJax.js',
+//				},
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true }, 
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
