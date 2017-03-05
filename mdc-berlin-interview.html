@@ -142,7 +142,7 @@
 							<div align="center" style="width:50%; float: left;">
 								<img width="75%" src="figs/f1-t3.svg" style="border:none; box-shadow:none;">
 								<video align="center" width="85%" data-autoplay loop="true" controls>
-									<source src="videos/rep.ogg" type="video/ogg">
+									<source data-src="http://www.theorie.physik.uni-goettingen.de/~ehsan.irani/videos/rep.ogg" type="video/ogg">
 								</video>
 							</div>
 							<br style="clear:both;">
@@ -592,17 +592,9 @@
 						<br style="clear:both;">
 						<p style="font-size:25px;">($N=1000$, $u=2\times10^{-5}$, $\phi=0.75$, $b=0.05$, $\dot\gamma=2\times10^{-4}$)</p>
 						<div width="100%">
-								<div style="width:50%; float: left;">
-										<video id="particlesVideo" width="100%" preload="auto" controls data-autoplay>
-											<source src="http://www.theorie.physik.uni-goettingen.de/~ehsan.irani/videos/1.ogg" type="video/ogg">
-										</video>
-								</div>
-								<div style="width: 50%; float: right;">
-										<video id="contactsVideo" width="100%" controls data-autoplay>
-											<source src="http://www.theorie.physik.uni-goettingen.de/~ehsan.irani/videos/2.ogg" type="video/ogg">
-										</video>
-								</div>
-								<br style="clear:both;"/>
+								<video id="particlesVideo" width="100%" preload="auto" controls data-autoplay>
+									<source data-src="http://www.theorie.physik.uni-goettingen.de/~ehsan.irani/videos/cd-sb-vel-z-hd1080p.ogg" type="video/ogg">
+								</video>
 						</div>
 					</section>
 					<section>
@@ -797,7 +789,226 @@
 				</div>
 				</section>
 				</section>
+				<section>
+					<section>
+						<div width="100%">
+								<div align="left" id="float-box" style="float:left;" >
+									<p id="part">V.I Appendix: Yield Stress</p>
+									<h3 id="h" class="blue" align="left">Elastic Spring Network</h3>
+								</div>
+								<br style="clear:both;">
+							<div style="width:50%; float:left;">
+								<p align="left"> - Close to the iso-static point¹:<p>
+									$\delta_\bot\sim {\gamma \over \delta z^{1/2}}$
+									<p align="left"> - Shear modulus:</p>
+									$g_{\text{lin}} \sim \delta z$<br>
+									<p align="left"> - Non-linear loading²⁻³:</p>
+								<img width="90%" src="figs/particles-disp.svg" style="higth:50%; border:none; box-shadow:none;">
+							</div>
+							<div style="width:50%; float:right;">
+								<img align="center" width="70%" src="figs/snap-z-network-N1000-u2e-4-phi0.75-erate1e-6-1.jpg" style="higth:50%; border:none; box-shadow:none;">
+									$\gamma_{\text{y}} \sim (u\delta z)^{1/2}$<br>
+								<p align="center">$\sigma_{\text{y}} \sim u^{1/2}\delta z^{3/2}$</p>
+						<hr>
+						<p align="left" style="font-size: 15px">¹ M. van Hecke, J. Phys: Condens. Matter, <strong>22</strong>, 033101 (2010).
+						<br>² M. Wyart, et al. , Phys. Rev. Lett. <strong>101</strong>, 215501 (2008).
+						<br>³  O Lieleg, et al. , Phys. Rev. Lett. <strong>99</strong>, 088102 (2007).</p>
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section>
+					<section data-transition-speed="slow">
+						<div width="100%">
+							<div align="left" id="float-box" style="float:left;" >
+									<p id="part">V.I Appendix: Yield Stress</p>
+								<h3 id="h" class="blue" align="left">Yield Stress: Scaling</h3>
+							</div>
+							<br style="clear:both;">
+							<div style="width:50%; float:left; font-size:35px;">
+								<img align="center" width="70%" src="figs/snap-z-network-N1000-u2e-4-phi0.75-erate1e-6-1.jpg" style="higth:50%; border:none; box-shadow:none; margin:5px;">
+								<p align="left" style="margin:5px;">Below the Jamming:</p> 
+								$\sigma_{\text{y}} \propto u^{1/2}\delta z^{3/2}$ 
+								<p align="left" style="margin:5px;">Above the Jamming:</p> 
+								$\sigma_{\text{y}} \propto \delta\phi^\alpha$ 
+							</div>
+							<div style="width:50%; float:left;">
+								<img width="80%" src="figs/yield-stress-scaling3.svg" style="higth:50%; border:none; box-shadow:none;">
+							</div>
+							<br style="clear:both;">
+						</div>
+					</section>
 
+				</section>
+
+				<section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Thermal Fluctuations</h3>
+						</div>
+						<br style="clear:both;">
+						<div width="100%">
+							<div align="left" style="width:50%; float:left;">
+								<br>
+								<p>- Back to $\text{CD}_n$ Model</strong></p>
+								<p align="center">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+								<br>
+								<p>- Random force: <strong>DPD Scheme</strong></p>
+								<!--<p align="center">$\vec{F}_{\text{R}} = \nu \alpha(\Delta t)^{-1/2} \hat{r}$</p>
+								<p align="center">$\nu = (2K_b T b)^{1/2}$</p>-->
+								<p align="center">$\vec{F}_{\text{R}} = \alpha\sqrt{\frac{2b K_B T}{\Delta t}}\hat{r}$</p>
+								<p align="center">$\alpha$: Gaussian random number</p>
+							</div>
+							<div align="right" style="width:50%; float:left;">
+								<img align="center" width="65%" style="border: none; box-shadow:none;" src="figs/cdn-t-particles.svg">
+								<p align="right">- Ratio of <span style="color:green">thermal</span> energy to attractive energy:</p>
+								<p align="right">$\tau = K_B T/\epsilon u^2$</p>
+							</div>
+							<div style="clear:left;"></div>
+						</div>
+						<aside class="notes">
+							<p>- Switch on the temperature</p>
+							<p>- back to the $CD_n$ model</p>
+							<p>- Random force form DPD</p>
+							<p>- $\tau$: thermal energy in units of attractive energy</p>
+
+						</aside>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Flow Curves</h3>
+						</div>
+						<br style="clear:both;">
+						<div width="100%">
+							<div align="left" style="width:25%; float:left;">
+								- Stress:
+								<p align="left" style="font-size:30px;">$\sigma_T = \frac{K_B T}{R^3}$</p>
+								<br>
+								- Time-scale:
+								<p align="left" style="font-size:30px;">$t_T = R \sqrt{\frac{m}{K_B T}}$</p>
+								<br>
+								<strong>Peclet number</strong>
+								<p align="center" style="font-size:30px;">$P_e=\dot\gamma t_T$</p>
+							</div>
+							<div align="right" style="width:75%; float:left;">
+								<img align="right" width="100%" style="border: none; box-shadow:none;" src="figs/thermal-fc-u2e-4-diff-phi-diff-tau-thesis-legends.svg">
+								<p align="right" style="font-size:40px;"><span style="color:green;">Athermal</span> + <span style="color:red;">intermediate</span> + <span style="color:darkblue;">thermal</span> regimes!</p>
+							</div>
+							<div style="clear:left;"></div>
+						</div>
+						<aside class="notes">
+							<p>- Dimensional analysis: thermal stress and time scale</p>
+							<p>- Peclet number: competition between convection and diffusion</p>
+							<p>- Three distinct regimes of flow curves: athermal - intermediate - thermal</p>
+							<p>- thermal regime: repulsive glassy physics!</p>
+							<p>- we are interested in the intemediate regime</p>
+
+						</aside>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Connectivity</h3>
+						</div>
+						<br style="clear:both;">
+						<img align="center" width="100%" style="border: none; box-shadow:none;" src="figs/thermal-3d-z.svg">
+						<p><span style="color:green;">Intermediate</span> to <span style="color:green;">thermal</span> regime:<br>Sharp drop in $z$</p>
+						<aside class="notes">
+							<p>- Already know about the attraction-repulsin transition by changing $\dot\gamma$</p>
+							<p>- athermal-thermal transition is discontinous</p>
+							<p>- More clear if we look at the yield connectivity</p>
+						</aside>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Connectivity</h3>
+						</div>
+						<br style="clear:both;">
+						<div align="left" style="width:50%; float:left;">
+							<br>
+							Yield connectivity:
+							$$z_y=\lim_{\dot\gamma \to 0} z(\dot\gamma)$$
+							Here:
+							$$z_y \approx z(\dot\gamma=10^{-6})$$
+						</div>
+						<div style="width:50%; float:left;">
+							<img align="center" width="100%" style="border: none; box-shadow:none;" src="figs/thermal-yield-zall-tau-u2e-4-phi0.82.svg">
+						</div>
+						<br style="clear:both;">
+							<p><span style="color:green;">Intermediate</span> to <span style="color:green;">thermal</span> regime:</p>
+							$$z_y^{\text{(rep)}} \approx z_y^{\text{(att)}}$$
+
+						<aside class="notes">
+							<p>- Define the yield connectivity</p>
+							<p>- athermal-thermal transitions is discontinous</p>
+							<p>- at the edge of the transition: att. and rep. connectivity equals!</p>
+							<p>- What is happening in the intermediate regime?</p>
+						</aside>
+					</section>
+
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Movies</h3>
+							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$, $\dot\gamma=10^{-6}$)</p>
+						</div>
+						<br style="clear:both;">
+						<div width="100%">
+							<div style="width:50%; float: left;"> 
+								$\tau=0.0$
+								<video id="particlesVideo" width="100%" controls data-autoplay>
+									<source src="videos/tau0-3.ogg" type="video/ogg">
+								</video>
+							</div>
+							<div style="width: 50%; float: right;">
+								$\tau=2\times10^{-1}$
+								<video id="contactsVideo" width="100%" controls data-autoplay>
+									<source src="videos/tau2e-1-3.ogg" type="video/ogg">
+								</video>
+							</div>
+							<br style="clear:both;"/>
+						</div>
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Phase Separation</h3>
+							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$)</p>
+						</div>
+						<br style="clear:both;">
+						<img align="center" width="70%" style="border:none; box-shadow:none;" src="figs/thermal-snap-shear-noshear.svg">
+						<br>
+						<div align="left" style="width:40%; float:left;">
+							<br>
+							<p align="left">Phase Structures:</p>
+						</div>
+						<div align="left" style="width:60%; float:left;">
+							<img align="center" width="90%" style="border:none; box-shadow:none;" src="figs/thermal-clust-all-circ.svg">
+						</div>
+						<br style="clear:both;">
+					</section>
+					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<h3 id="h" class="blue" align="left">Phase Separation</h3>
+							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$)</p>
+						</div>
+						<br style="clear:both;">
+						<div style="width:30%; float:left;">
+							<br>
+							<br>
+							<br>
+							$$N^* = \frac{N^{(\text{in clust.})}}{N}$$
+						</div>
+						<div style="width:70%; float:left;">
+							<img align="center" width="100%" style="border:none; box-shadow:none;" src="figs/thermal-Nstar-image.svg">
+						</div>
+						<br style="clear:both;">
+						$\tau$, $\dot\gamma$: Complicated interplay 
+					</section>
+				</section>
 			</div>
 		</div>
 
@@ -805,24 +1016,6 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
-var v1 = document.getElementById("particlesVideo"),
-	v2 = document.getElementById("contactsVideo");
-
-v1.addEventListener('play', function(e) {
-		if (v2.paused) v2.play();
-		},false);
-
-v1.addEventListener('pause', function(e) {
-		if (v2.paused==false) v2.pause();
-		},false);
-
-v2.addEventListener('play', function(e) {
-		if (v1.paused) v1.play();
-		},false);
-
-v2.addEventListener('pause', function(e) {
-		if (v1.paused==false) v1.pause();
-		},false);
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
