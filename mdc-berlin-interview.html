@@ -135,6 +135,35 @@
 								<br>Small <span style="color:green;">attractive</span> tail:</p>
 								<p align="center">Range=$2u$<br>
 								Depth $\propto \epsilon u$</p>
+								<p><strong>Dissipative Force:</strong><br>($\text{CD}_n$ Model)</strong></p>
+								<p align="center">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+							</div>
+							<div align="center" style="width:50%; float: left;">
+								<img width="85%" src="figs/f1-t3.svg" style="border:none; box-shadow:none;">
+								<video align="center" width="65%" data-autoplay loop="true" controls>
+									<source data-src="http://www.theorie.physik.uni-goettingen.de/~ehsan.irani/videos/rep.webm" type="video/webm">
+								</video>
+							</div>
+							<br style="clear:both;">
+						</div>
+
+					<aside class="notes">
+						Test
+					</aside>
+					</section>
+					<!--<section>
+						<div style="width:100%;">
+							<div align="left" style="width:50%; float: left;">
+								<div id="float-box" style="float:left;" >
+									<p id="part">II. The Model</p>
+									<h3 id="h" class="blue" align="left">Simulation Setup</h3>
+								</div>
+								<br style="clear:both;">
+								<strong>Conservative Force:</strong>
+								<p>Harmonic repulsive core
+								<br>Small <span style="color:green;">attractive</span> tail:</p>
+								<p align="center">Range=$2u$<br>
+								Depth $\propto \epsilon u$</p>
 								<br>
 								<p><strong>Dissipative Force:</strong></p>
 								<p align="left">Keeps the system athermal!</p>
@@ -151,9 +180,9 @@
 					<aside class="notes">
 						Test
 					</aside>
-					</section>
+					</section>-->
 
-					<section data-transition="slide-in fade-out">
+					<!--<section data-transition="slide-in fade-out">
 						<div align="left" id="float-box" style="float:left;" >
 							<p id="part">II. The Model</p>
 							<h3 id="h" class="blue" align="left">Dissipation Models</h3>
@@ -206,7 +235,7 @@
 						<aside class="notes">
 							Test
 						</aside>
-					</section>
+					</section>-->
 				</section>
 				<section>
 					<section data-transition="slide-in fade-out">
@@ -413,31 +442,6 @@
 						</div>
 				</section>-->
 
-					<section>
-						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">III. Results: $\text{CD}_n$ Model</p>
-							<h3 id="h" class="blue" align="left">Changing Damping Factor</h3>
-						</div>
-						<br style="clear:both;">
-						<div width="100">
-								<p align="left">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
-							<div style="width:30%; float:left;">
-							<br>
-							<br>
-							Damping time-scale:
-							<br>
-							<br>
-							$$\tau_d = {m\over b}$$<br>
-								<hr>
-								<p align="left" style="font-size: 25px">E. Irani et al., Phys. Rev. E <strong> 94</strong>, 052608 (2016)</p>
-							</div>
-								<div style="width:70%; float:right;">
-									<img width="100%" src="figs/fc-u7e-4-phi0.75-diff-b-inset.svg" style="border:none; box-shadow:none;">
-								</div>
-								<br style="clear:both;">
-							</div>
-							<br>
-					</section>
 				</section>
 				
 				<section>
@@ -614,17 +618,6 @@
 									<img src="figs/diss-full-vel-sb-stress-2.svg" style="width:80%; border:none; box-shadow:none;">
 						</div>
 					</section>
-					<section>
-						<div width="100%">
-						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">IV. Results: $\text{CD}$ Model</p>
-							<h3 id="h" class="blue" align="left">Stress Localization</h3>
-						</div>
-						<br style="clear:both;">
-						<img src="figs/cd-stressv-field-evo-highres.svg" style="width:75%; border:none; box-shadow:none;">
-						<p align="left">Larger $\Delta\gamma$:</p> <p><span style="color:green">Virial stress</span> builds up in the <span style="color:red">inertial band.</span></p>
-						</div>
-					</section>
 
 					<!--<section>
 						<div width="100%">
@@ -791,9 +784,34 @@
 				</section>
 				<section>
 					<section>
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.I Appendix: $\text{CD}_n$ Model (Under-damped)</p>
+							<h3 id="h" class="blue" align="left">Changing Damping Factor</h3>
+						</div>
+						<br style="clear:both;">
+						<div width="100">
+								<p align="left">$\vec{F}_{\text{diss.}} = -b[(\vec{v}_i - \vec{v}_j).\hat{r}]\hat{r}$</p>
+							<div style="width:30%; float:left;">
+							<br>
+							<br>
+							Damping time-scale:
+							<br>
+							<br>
+							$$\tau_d = {m\over b}$$<br>
+								<hr>
+								<p align="left" style="font-size: 25px">E. Irani et al., Phys. Rev. E <strong> 94</strong>, 052608 (2016)</p>
+							</div>
+								<div style="width:70%; float:right;">
+									<img width="100%" src="figs/fc-u7e-4-phi0.75-diff-b-inset.svg" style="border:none; box-shadow:none;">
+								</div>
+								<br style="clear:both;">
+							</div>
+							<br>
+					</section>
+					<section>
 						<div width="100%">
 								<div align="left" id="float-box" style="float:left;" >
-									<p id="part">V.I Appendix: Yield Stress</p>
+									<p id="part">V.II Appendix: Yield Stress</p>
 									<h3 id="h" class="blue" align="left">Elastic Spring Network</h3>
 								</div>
 								<br style="clear:both;">
@@ -820,7 +838,7 @@
 					<section data-transition-speed="slow">
 						<div width="100%">
 							<div align="left" id="float-box" style="float:left;" >
-									<p id="part">V.I Appendix: Yield Stress</p>
+									<p id="part">V.II Appendix: Yield Stress</p>
 								<h3 id="h" class="blue" align="left">Yield Stress: Scaling</h3>
 							</div>
 							<br style="clear:both;">
@@ -843,7 +861,7 @@
 				<section>
 					<section>
 						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<p id="part">V.III Appendix: Thermal Fluctuations</p>
 							<h3 id="h" class="blue" align="left">Thermal Fluctuations</h3>
 						</div>
 						<br style="clear:both;">
@@ -876,7 +894,7 @@
 					</section>
 					<section>
 						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<p id="part">V.III Appendix: Thermal Fluctuations</p>
 							<h3 id="h" class="blue" align="left">Flow Curves</h3>
 						</div>
 						<br style="clear:both;">
@@ -908,7 +926,7 @@
 					</section>
 					<section>
 						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<p id="part">V.III Appendix: Thermal Fluctuations</p>
 							<h3 id="h" class="blue" align="left">Connectivity</h3>
 						</div>
 						<br style="clear:both;">
@@ -922,7 +940,7 @@
 					</section>
 					<section>
 						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<p id="part">V.III Appendix: Thermal Fluctuations</p>
 							<h3 id="h" class="blue" align="left">Connectivity</h3>
 						</div>
 						<br style="clear:both;">
@@ -950,7 +968,7 @@
 
 					<section>
 						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<p id="part">V.III Appendix: Thermal Fluctuations</p>
 							<h3 id="h" class="blue" align="left">Movies</h3>
 							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$, $\dot\gamma=10^{-6}$)</p>
 						</div>
@@ -973,7 +991,7 @@
 					</section>
 					<section>
 						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<p id="part">V.III Appendix: Thermal Fluctuations</p>
 							<h3 id="h" class="blue" align="left">Phase Separation</h3>
 							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$)</p>
 						</div>
@@ -991,7 +1009,7 @@
 					</section>
 					<section>
 						<div align="left" id="float-box" style="float:left;" >
-							<p id="part">V.II Appendix: Thermal Fluctuations</p>
+							<p id="part">V.III Appendix: Thermal Fluctuations</p>
 							<h3 id="h" class="blue" align="left">Phase Separation</h3>
 							<p style="font-size:25px;">($u=2\times10^{-4}$, $\phi=0.75$)</p>
 						</div>
@@ -1009,6 +1027,17 @@
 						$\tau$, $\dot\gamma$: Complicated interplay 
 					</section>
 				</section>
+					<section>
+						<div width="100%">
+						<div align="left" id="float-box" style="float:left;" >
+							<p id="part">V.IV Appendix: Shear Bands in $\text{CD} Model$</p>
+							<h3 id="h" class="blue" align="left">Stress Localization</h3>
+						</div>
+						<br style="clear:both;">
+						<img src="figs/cd-stressv-field-evo-highres.svg" style="width:75%; border:none; box-shadow:none;">
+						<p align="left">Larger $\Delta\gamma$:</p> <p><span style="color:green">Virial stress</span> builds up in the <span style="color:red">inertial band.</span></p>
+						</div>
+					</section>
 			</div>
 		</div>
 
